@@ -2,10 +2,10 @@
 
 namespace App\Classes\CodeAnotator;
 
-use App\Classes\CodeAnotator\CodeAnotator;
+use App\Interfaces\CodeAnotatorInterface;
 use Storage;
 
-class DawnCC extends CodeAnotator {
+class DawnCC implements CodeAnotatorInterface {
 
 	public function anotateFile($fileDirectory) {
 		$currentDirectory = getcwd();
