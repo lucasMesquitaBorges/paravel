@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Classes\CodeAnotater;
+namespace App\Classes\CodeAnotator;
 
-use App\Classes\CodeAnotater\CodeAnotater;
+use App\Classes\CodeAnotator\CodeAnotator;
 use Storage;
 
-class DawnCC extends CodeAnotater {
+class DawnCC extends CodeAnotator {
 
 	public function anotateFile($fileDirectory) {
 		$currentDirectory = getcwd();

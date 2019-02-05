@@ -1,6 +1,6 @@
 <?php
 namespace App\Interfaces;
 
-interface CodeAnotaterInterface {
+interface CodeAnotatorInterface {
 
 }

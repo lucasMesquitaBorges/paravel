@@ -3,7 +3,7 @@
 
 int main()
 {
-  // nvcc ordena_host.cu -arch=sm_52 -o ordenaGPU
+  // nvcc ordena_host.cu --arch=sm_52 -o ordenaGPU
   clock_t begin = clock();
    int vetor[10] = {10,4,5,9,10,45,5,4,6,7};
 

@@ -7,7 +7,7 @@
 // and stores the result in res[][]
 
 int main() {
-  // nvcc multmatriz_host.cu -arch=sm_52 -o multmatrizGPU
+  // nvcc multmatriz_host.cu --arch=sm_52 -o multmatrizGPU
   clock_t begin = clock();
   int mat1[N][N];
   int mat2[N][N];

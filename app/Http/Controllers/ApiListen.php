@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Classes\SequentialCode\CSequentialCode;
-use App\Classes\CodeAnotater\DawnCC;
+use App\Classes\CodeAnotator\DawnCC;
 use App\Classes\FileManipulation;
 use Storage;
 

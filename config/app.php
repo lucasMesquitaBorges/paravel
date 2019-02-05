@@ -211,6 +211,8 @@ return [
 
     ],
 
-    'dawnCC_path' => env('DAWNCC_PATH')
+    'dawnCC_path' => env('DAWNCC_PATH'),
+    'ppcg_path' => env('PPCG_PATH'),
+    'arch_sm' => env('ARCH_SM')
 
 ];
