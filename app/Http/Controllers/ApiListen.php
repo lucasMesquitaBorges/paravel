@@ -16,7 +16,7 @@ class ApiListen extends Controller
 	}
 
 	public function testCodeAnotatePost(Request $request) {
-		$dawnCCAnotator = new DawnCC();
+        $dawnCCAnotator = new DawnCC();
 		$ppcg = new Ppcg();
 
 		$file = new FileManipulation();
@@ -37,5 +37,29 @@ class ApiListen extends Controller
 		}
 
 		return $execOutput;
-	}
+    }
+
+    public function parallelize(Request $request)
+    {
+        $dawnCCAnotator = new DawnCC();
+        $file = new FileManipulation();
+
+        $code = str_replace('#include "simpletools.h"', '#include <stdio.h>', $request->code);
+
+        $file->setFileDirectory('anotateFiles/');
+        $file->createFileFromString($code, $request->projectName);
+
+		$dawnCCAnotator->anotateFile($file->getStorageFilePath(true));
+
+		// $ppcg->setFile($file);
+		// if($ppcg->parallelizeFile()) {
+		// 	$execName = $file->getFileName().'GPU';
+		// 	chdir($file->getStorageFilePath(true));
+		// 	exec("nvcc ".$file->getFileName().'_AI_host.cu -arch='.config('app.arch_sm')." -o ".$execName);
+
+		// 	$execOutput = shell_exec("./$execName");
+		// }
+
+        return response()->json(['success' => true, 'compiler-output' => '', 'compiler-error' => ""]);
+    }
 }

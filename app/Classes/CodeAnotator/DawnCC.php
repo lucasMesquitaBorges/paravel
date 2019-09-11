@@ -17,7 +17,7 @@ class DawnCC implements CodeAnotatorInterface {
 	}
 
 	public function cdToCodeAnotaterBinaryDirectory() {
-		chdir(config("app.dawnCC_path").'/DawnCC/');
+        chdir(config("app.dawnCC_path").'/DawnCC/');
 	}
 
 	public static function getAnotatedFileName($fileName) {
