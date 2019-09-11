@@ -21,4 +21,4 @@ Route::get('/testCodeAnotate', 'ApiListen@testCodeAnotate')->name('api.testCodeA
 
 Route::post('/testCodeAnotate/process', 'ApiListen@testCodeAnotatePost')->name('api.testCodeAnotate.post');
 
-Route::any('/parallelize', 'ApiListen@parallelize')->name('api.parallelize');
+Route::post('/parallelize', 'ApiListen@parallelize')->name('api.parallelize');
