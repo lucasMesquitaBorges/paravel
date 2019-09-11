@@ -33,7 +33,20 @@ class FileManipulation {
 		$this->fileName = pathinfo($this->getFile()->getClientOriginalName(), PATHINFO_FILENAME);
 
 		$this->fullFileName = $this->getFile()->getClientOriginalName();
-	}
+    }
+
+    public function createFileFromString($fileContents, $name)
+    {
+        $this->fileName = $name;
+        $this->fullFileName = $name.'.c';
+        $this->storageFilePath = $this->fileDirectory.$this->fileName;
+
+        $absolutePathToFile = "{$this->fileDirectory}/{$this->fileName}/{$this->fullFileName}";
+
+        Storage::put($absolutePathToFile, $fileContents);
+
+        $this->file = Storage::get($absolutePathToFile);
+    }
 
 	public function getFile() {
 		return $this->file;

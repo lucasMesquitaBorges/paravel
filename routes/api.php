@@ -20,3 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/testCodeAnotate', 'ApiListen@testCodeAnotate')->name('api.testCodeAnotate');
 
 Route::post('/testCodeAnotate/process', 'ApiListen@testCodeAnotatePost')->name('api.testCodeAnotate.post');
+
+Route::any('/parallelize', 'ApiListen@parallelize')->name('api.parallelize');
