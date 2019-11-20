@@ -9,9 +9,9 @@ The anotated code can be parallelized with a parallel compiler that will generat
 
 ## Roadmap
 All roadmap steps must be implemented with independent api calls.
-~~* Anotate C and C++ sequential code with [DawnCC]~~(https://github.com/gleisonsdm/DawnCC-Compiler).
-~~* Generate CUDA and OpenCL code from C anotated code with [PPCG]~~(https://github.com/Meinersbur/ppcg).
-~~* Compile and run CUDA and OpenCL code.~~
+* ~~Anotate C and C++ sequential code with [DawnCC](https://github.com/gleisonsdm/DawnCC-Compiler).~~
+* ~~Generate CUDA and OpenCL code from C anotated code with [PPCG](https://github.com/Meinersbur/ppcg).~~
+* ~~Compile and run CUDA and OpenCL code.~~
 * Integrate anotated and parallelized code with a FTP server.
 * Integrate with a database and create user authentication.
 
