@@ -11,7 +11,7 @@ class DawnCC implements CodeAnotatorInterface {
 		$currentDirectory = getcwd();
 
 		$this->cdToCodeAnotaterBinaryDirectory();
-		exec("./run.sh -d ". config("app.dawnCC_path") ." -src ".$fileDirectory);
+        exec("./run.sh -d ". config("app.dawnCC_path") ." -src ".$fileDirectory);
 
 		chdir($currentDirectory);
 	}

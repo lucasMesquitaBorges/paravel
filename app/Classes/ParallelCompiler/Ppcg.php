@@ -15,7 +15,7 @@ class Ppcg implements ParallelCompilerInterface {
 
 	public function parallelizeFile() {
 		$currentDirectory = getcwd();
-		$fullFilePath = $this->file->getStorageFilePath(true).DawnCC::getAnotatedFileName($this->file->getFullFileName());
+        $fullFilePath = $this->file->getStorageFilePath(true).'/'.DawnCC::getAnotatedFileName($this->file->getFullFileName());
 
 		$this->cdToParallelCompilerBinaryDirectory();
 		exec("./ppcg --target=cuda $fullFilePath");
