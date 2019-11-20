@@ -51,15 +51,21 @@ class ApiListen extends Controller
 
 		$dawnCCAnotator->anotateFile($file->getStorageFilePath(true));
 
-		// $ppcg->setFile($file);
-		// if($ppcg->parallelizeFile()) {
-		// 	$execName = $file->getFileName().'GPU';
-		// 	chdir($file->getStorageFilePath(true));
-		// 	exec("nvcc ".$file->getFileName().'_AI_host.cu -arch='.config('app.arch_sm')." -o ".$execName);
+        $ppcg = new Ppcg();
+		$ppcg->setFile($file);
+		if($ppcg->parallelizeFile()) {
+			$execName = $file->getFileName().'GPU';
+            chdir($file->getStorageFilePath(true));
 
-		// 	$execOutput = shell_exec("./$execName");
-		// }
+            $compilerOutput = shell_exec("nvcc ".$file->getFileName().'_AI_host.cu -arch='.config('app.arch_sm')." -o ".$execName);
 
-        return response()->json(['success' => true, 'compiler-output' => '', 'compiler-error' => ""]);
+			$execOutput = shell_exec("./$execName");
+		}
+
+        return response()->json([
+                            'success' => true,
+                            'compilerOutput' => $execOutput,
+                            'compilerError' => ""
+                        ]);
     }
 }
